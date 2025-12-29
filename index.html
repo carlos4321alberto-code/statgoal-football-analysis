@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>StatGoal — Dashboard</title>
+  <meta name="description" content="StatGoal — dashboard de análises de futebol" />
+  <link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+  <!-- Sidebar -->
+  <nav id="sidebar" class="sidebar" aria-label="Menu principal">
+    <div class="logo">
+      <div class="logo-mark" aria-hidden="true">
+        <!-- simple SVG mark -->
+        <svg width="34" height="34" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <rect rx="6" width="24" height="24" fill="url(#g)"></rect>
+          <defs>
+            <linearGradient id="g" x1="0" x2="1">
+              <stop offset="0" stop-color="#238636"/>
+              <stop offset="1" stop-color="#1f6feb"/>
+            </linearGradient>
+          </defs>
+        </svg>
+      </div>
+      <div class="logo-text">STATGOAL</div>
+    </div>
+
+    <ul class="nav-list" role="menu">
+      <li><button class="nav-item active" role="menuitem">Dashboard</button></li>
+      <li><button class="nav-item" role="menuitem">Today's Matches</button></li>
+      <li><button class="nav-item" role="menuitem">Betting Markets</button></li>
+      <li><button class="nav-item" role="menuitem">Bankroll Management</button></li>
+      <li><button class="nav-item" role="menuitem">Performance</button></li>
+      <li><button class="nav-item" role="menuitem">Settings</button></li>
+    </ul>
+
+    <div class="sidebar-footer">
+      <div class="ev-summary">
+        <div class="ev-title">EV Summary</div>
+        <div class="ev-graph" aria-hidden="true">▂▅▇▇▆▅▇</div>
+      </div>
+
+      <div class="user" aria-hidden="false">
+        <div class="avatar" aria-hidden="true">CA</div>
+        <div class="user-info">
+          <div class="user-name">Carlos Alberto</div>
+          <div class="user-status">Online</div>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Toggle (mobile) -->
+  <button id="menuToggle" class="menu-toggle" aria-controls="sidebar" aria-expanded="false" aria-label="Abrir menu">
+    ☰
+  </button>
+
+  <!-- Main area -->
+  <main class="main" id="main">
+    <header class="topbar">
+      <div class="breadcrumbs">
+        <span class="crumb">Dashboard</span>
+        <span class="sep">|</span>
+        <span class="crumb">Today's Matches</span>
+      </div>
+
+      <div class="top-actions">
+        <div class="sync" id="syncStatus" aria-hidden="true">Sistema sincronizado — 11:47</div>
+        <button class="icon-btn" aria-label="Notificações">🔔</button>
+        <button class="icon-btn" aria-label="Conta">⚙️</button>
+      </div>
+    </header>
+
+    <section class="match-card">
+      <div class="match-left">
+        <div class="teams">
+          <div class="team">
+            <div class="team-mark">LIV</div>
+            <div class="team-name">Liverpool</div>
+          </div>
+          <div class="score">1 &nbsp;&dash;&nbsp; 1</div>
+          <div class="team">
+            <div class="team-mark">TOT</div>
+            <div class="team-name">Tottenham</div>
+          </div>
+        </div>
+
+        <div class="odds-row">
+          <div class="odds">1.72</div>
+          <div class="vs">VS</div>
+          <div class="odds">4.50</div>
+        </div>
+      </div>
+
+      <div class="match-right">
+        <div class="mini-stats">
+          <div><strong>63.2%</strong> Poss.</div>
+          <div><strong>28.6%</strong> Shots</div>
+          <div><strong>1.9%</strong> xG</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="content-grid">
+      <div class="left-column">
+        <div class="panel suggestions">
+          <h3>Top Suggestions</h3>
+          <ul>
+            <li>
+              <div class="suggest-title">Over 2.5 Gols</div>
+              <div class="suggest-meta"><span class="odd">1.68</span><span class="ev">+7.4%</span></div>
+            </li>
+            <li>
+              <div class="suggest-title">BTTS: YES</div>
+              <div class="suggest-meta"><span class="odd">1.65</span><span class="ev">+8.6%</span></div>
+            </li>
+            <li>
+              <div class="suggest-title">Tottenham +0.5</div>
+              <div class="suggest-meta"><span class="odd">2.07</span><span class="ev">+45.7%</span></div>
+            </li>
+          </ul>
+        </div>
+
+        <div class="panel markets">
+          <h3>Betting Market</h3>
+          <div class="market-grid">
+            <div class="market-item">
+              <div class="m-title">Over / Under</div>
+              <div class="m-value">6.30%</div>
+            </div>
+            <div class="market-item">
+              <div class="m-title">Both Teams to Score</div>
+              <div class="m-value">2.37%</div>
+            </div>
+            <div class="market-item">
+              <div class="m-title">Tottenham +0.5</div>
+              <div class="m-value">2.32%</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <aside class="right-column" aria-labelledby="upcoming-title">
+        <div class="panel upcoming" id="upcoming">
+          <h3 id="upcoming-title">Upcoming Matches</h3>
+          <ul>
+            <li><strong>Brighton → Man Utd</strong> <span class="meta">01.5 • 1.20</span></li>
+            <li><strong>Atalanta → Getafe</strong> <span class="meta">BTTS • 1.53</span></li>
+            <li><strong>Lazio → Empoli</strong> <span class="meta">BTT3 • 2.05</span></li>
+            <li><strong>Milan → Genoa</strong> <span class="meta">01.5 • 1.55</span></li>
+          </ul>
+        </div>
+
+        <div class="panel perf">
+          <h4>Betting Market Performance</h4>
+          <div class="perf-list">
+            <div class="perf-item"><div class="p-title">Over / Under</div><div class="p-val">72.2%</div></div>
+            <div class="perf-item"><div class="p-title">Both Teams to Score</div><div class="p-val">72.9%</div></div>
+            <div class="perf-item"><div class="p-title">Correct Score</div><div class="p-val">76.8%</div></div>
+          </div>
+        </div>
+      </aside>
+    </section>
+
+    <footer class="footer">
+      <div>© StatGoal — versão demo</div>
+    </footer>
+  </main>
+
+  <script src="assets/app.js" defer></script>
+</body>
+</html>
